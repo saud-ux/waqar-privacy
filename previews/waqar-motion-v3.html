@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173f2e">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>وقار — معاينة الصلاة والقبلة والانتقالات</title>
+<style>
+:root{--deep:#153c2b;--forest:#214c37;--green:#33684d;--sage:#a7bca8;--paper:#f7f7f0;--cream:#fffef9;--muted:#748477;--border:#e2e8dd;--speed:.38s}
+*{box-sizing:border-box}html{font-family:-apple-system,BlinkMacSystemFont,"Geeza Pro","SF Arabic",Tahoma,sans-serif;-webkit-text-size-adjust:100%}body{margin:0;color:var(--deep);background:radial-gradient(ellipse at top,#d7e5db,#ebefe8 55%,#e2e9e1)}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #74ad83;outline-offset:2px}button:active{transform:scale(.97)}.wrap{min-height:100dvh;display:flex;flex-direction:column;align-items:center;padding:20px 12px;gap:11px}
+.intro{text-align:center;color:#2b543d}.intro h1{font-size:23px;margin:0 0 3px}.intro p{font-size:12px;margin:0;color:#647967}.key{font-size:11px;border-radius:30px;color:#22553d;background:#dceade;padding:6px 12px;display:inline-block;margin-bottom:6px}
+.phone{position:relative;width:402px;max-width:100%;height:min(770px,calc(100dvh - 130px));min-height:540px;border:5px solid #17412f;border-radius:36px;background:var(--paper);overflow:hidden;box-shadow:0 18px 50px #13342038}
+.status{height:32px;background:#173f2e;color:#fff;display:flex;direction:ltr;align-items:center;justify-content:space-between;padding:0 16px;font-size:12px;font-weight:700}.notch{background:#071c12;border-radius:30px;width:89px;height:17px}
+.stage{height:calc(100% - 98px);position:relative;overflow:hidden}.view{display:none;position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding-bottom:18px}.view::-webkit-scrollbar{display:none}.view.active{display:block;animation:enter var(--speed) cubic-bezier(.2,.8,.2,1) both}.view.leaving{display:block;animation:leave .17s ease-in both}@keyframes enter{from{opacity:0;filter:blur(2px);transform:translateX(-30px) scale(.982)}to{opacity:1;filter:none;transform:translateX(0) scale(1)}}@keyframes leave{to{opacity:0;transform:translateX(20px) scale(.982)}}
+.hero{height:198px;background:radial-gradient(ellipse at 45% 100%,#e3cf9c66,transparent 68%),linear-gradient(153deg,#143b2a,#547b5d);position:relative;overflow:hidden;color:#fff}.mosque{position:absolute;bottom:0;left:0;width:100%;height:116px;fill:#19442f;opacity:.78}.heroTop{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;position:relative;z-index:1}.heroTop b{font-size:28px;letter-spacing:-1px}.round{border:1px solid #ffffff70;background:#ffffff21;border-radius:50%;height:40px;width:40px;color:white;font-size:22px}.heroCity{position:relative;z-index:1;text-align:center;margin-top:5px;font-size:16px;font-weight:700}.heroCity small{display:block;font-size:11px;color:#e5ece3;margin-top:5px;font-weight:400}.homeBody{padding:0 12px}.heroCard{border:1px solid #e2e8de;background:var(--cream);display:block;position:relative;width:100%;border-radius:25px;padding:18px 14px 17px;margin-top:-34px;text-align:center;color:var(--deep);box-shadow:0 9px 23px #22402b16}.heroCard .label{font-size:12px;color:#738b79;font-weight:700}.heroCard strong{display:block;font-size:40px;line-height:1.25;margin:3px 0}.heroCard .count{display:block;direction:ltr;font-size:29px;font-weight:850;font-variant-numeric:tabular-nums;letter-spacing:1px}.heroCard .caption{display:block;font-size:11px;color:#819685;margin-top:7px}.heroCard .orb{position:absolute;left:17px;top:59px;background:#e5efe6;border-radius:50%;width:46px;height:46px;display:grid;place-items:center;font-size:21px;color:#27583c}.stripLabel{font-size:12px;font-weight:800;color:#496952;margin:16px 3px 8px}.prayerStrip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;background:var(--cream);border:1px solid var(--border);border-radius:19px;padding:7px 5px}.prayerStrip button{border:0;background:transparent;color:#36553f;border-radius:12px;padding:7px 0;min-width:0}.prayerStrip button.highlight{background:#e2eee3}.prayerStrip i{display:block;font-size:18px;font-style:normal}.prayerStrip b{display:block;font-size:10px;margin:4px 0 3px}.prayerStrip small{display:block;font-size:9px;white-space:nowrap;color:#728574}.shortcutGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}.shortcut{min-height:78px;background:var(--cream);border:1px solid var(--border);border-radius:17px;color:#245039;padding:11px 2px 8px;transition:background .2s,transform .2s}.shortcut:active{background:#dce9dd}.shortcut i{font-style:normal;font-size:26px;display:block;margin-bottom:4px}.shortcut span{font-size:11px;font-weight:800;white-space:nowrap}
+.qiblaFast{width:100%;display:flex;gap:11px;align-items:center;text-align:right;background:linear-gradient(95deg,#eef3e9,#e1ede2);border:1px solid #c9ddcb;border-radius:18px;padding:11px 13px;color:#184731;position:relative;overflow:hidden}.qiblaFast:before{content:"";position:absolute;left:-25px;top:-30px;width:130px;height:130px;border:1px solid #b7d1bc;border-radius:50%}.qiblaFast .qicon{width:42px;height:42px;background:#285d43;color:#fff;border-radius:14px;display:grid;place-items:center;font-size:27px;z-index:1}.qiblaFast b{font-size:14px}.qiblaFast small{display:block;color:#56775e;font-size:11px;margin-top:3px}.card{width:100%;text-align:right;margin:12px 0 0;background:var(--cream);color:#214a35;border:1px solid var(--border);padding:15px;border-radius:18px;display:flex;align-items:center;gap:12px;box-shadow:0 3px 10px #2043290b}.cardIcon{width:43px;height:43px;border-radius:14px;background:#e7efe7;display:grid;place-items:center;font-size:24px}.card b{display:block;font-size:14px}.card small{display:block;font-size:11px;color:#7b917e;margin-top:6px}.card .chevron{margin-inline-start:auto;font-size:22px;color:#7d9884}
+.pageHead{background:linear-gradient(145deg,#173e2d,#417554);color:#fff;padding:21px 17px 22px;border-radius:0 0 24px 24px}.pageHead .line{display:flex;justify-content:space-between;align-items:center}.pageHead h2{font-size:26px;margin:4px 0 5px}.pageHead small{font-size:11px;color:#d9e7dc}.pageBack{background:#ffffff22;border:1px solid #ffffff55;color:#fff;border-radius:13px;padding:7px 12px;font-size:12px}.section{padding:14px}.softCard{background:var(--cream);border:1px solid var(--border);border-radius:19px;padding:16px;margin-bottom:11px;box-shadow:0 5px 14px #1940290b}.softCard h3{font-size:15px;margin:0 0 9px}.softCard p{font-size:12px;color:#718771;line-height:1.8}.timeList button{display:flex;justify-content:space-between;align-items:center;text-align:right;width:100%;background:#fffefa;border:1px solid #e2e7db;border-radius:16px;padding:13px;margin-bottom:8px;color:#28523b}.timeList span{font-weight:800}.timeList small{color:#728b78;font-size:11px}
+.compass{height:248px;width:248px;max-width:100%;border-radius:50%;margin:20px auto 16px;position:relative;display:grid;place-items:center;background:radial-gradient(circle,#488265,#1a5138 55%,#173f2d 68%,#dae7d8 69%,#a6c0a8 73%);box-shadow:0 15px 30px #173e2e30;border:3px solid #c5d9c6}.compass:before{content:"N";position:absolute;top:10px;font-weight:700;font-size:14px;color:#fff}.compass:after{content:"S";position:absolute;bottom:10px;font-weight:700;font-size:13px;color:#fff}.needle{width:6px;height:155px;border-radius:10px;background:linear-gradient(#e7c98c 49%,#b4d6bf 51%);position:absolute;transform:rotate(var(--spin,0deg));transition:transform 950ms cubic-bezier(.2,.87,.22,1)}.compass .symbol{border-radius:50%;width:62px;height:62px;display:grid;place-items:center;background:#214b36;color:#fff;font-size:36px;z-index:2}.primary{background:#255a40;color:#fff;border:0;border-radius:15px;padding:13px 15px;font-weight:800}.secondary{background:#fffef9;color:#28563d;border:1px solid #c6dbc9;border-radius:15px;padding:12px 13px;font-weight:750}.wide{width:100%}.verses{padding:22px 15px;background:#fffbee;border:6px double #cbb58f;border-radius:12px;text-align:center;line-height:2.3;font-size:25px;font-family:"Geeza Pro","Traditional Arabic",serif;min-height:270px}.flip{animation:flip .48s ease-in-out}@keyframes flip{50%{transform:perspective(700px) rotateY(38deg);opacity:.6}}.progress{height:9px;background:#dce8da;border-radius:50px;overflow:hidden;margin:11px 0}.progress>span{height:100%;display:block;background:#428b62;width:0;transition:width .35s}.dhikrCard{text-align:center;padding:25px 19px;min-height:250px;background:linear-gradient(135deg,#fffdf5,#f5f1e6);border:1px solid #e6dabc;border-radius:21px;box-shadow:0 9px 17px #28401b12;animation:enter .3s}.dhikrCard .flourish{font-size:28px;color:#b4a075}.dhikrCard strong{display:block;font-size:20px;line-height:1.8;margin:15px 0}.dhikrCard small{font-size:11px;color:#839584;line-height:1.8}.split{display:flex;gap:8px;margin-top:13px}.split>*{flex:1}.bottom{height:66px;display:flex;align-items:center;justify-content:space-around;gap:2px;background:#174530;padding:6px 5px}.bottom button{color:#e1eee5;border:0;background:transparent;border-radius:15px;padding:7px 3px;min-width:0;flex:1;transition:background .25s,transform .25s}.bottom button.active{background:#e7efe4;color:#17412c;transform:translateY(-3px)}.bottom i{font-size:21px;font-style:normal;display:block}.bottom small{font-size:10px;font-weight:700;display:block;margin-top:2px}
+.overlay{display:none;position:absolute;inset:32px 0 0;background:#102c2097;backdrop-filter:blur(5px);z-index:20;align-items:flex-end;padding:10px}.overlay.open{display:flex;animation:fade .24s both}@keyframes fade{from{opacity:0}to{opacity:1}}.sheet{width:100%;border-radius:25px;background:#fffef8;padding:21px 17px 19px;animation:rise .43s cubic-bezier(.2,.87,.2,1) both;box-shadow:0 -12px 30px #0b20183d}@keyframes rise{from{transform:translateY(105%) scale(.96)}to{transform:translateY(0) scale(1)}}.handle{height:4px;width:43px;background:#c8d8c9;border-radius:10px;margin:0 auto 16px}.sheetHead{font-size:13px;text-align:center;color:#7e947d}.sheet h3{text-align:center;font-size:28px;margin:4px 0}.sheet .nextBox{background:#e5f0e7;border-radius:20px;padding:14px;text-align:center;margin:14px 0}.nextBox .nextLabel{font-size:12px;color:#66816c}.nextBox strong{font-size:26px;display:block}.nextBox .countDown{font-size:29px;direction:ltr;font-variant-numeric:tabular-nums;font-weight:850;margin:7px 0}.sheet .foot{font-size:11px;color:#748979;text-align:center;line-height:1.8}.sheet .actions{display:flex;gap:8px;margin-top:15px}.sheet .actions button{flex:1}
+.demoFoot{max-width:450px;text-align:center;font-size:11px;color:#59705e;line-height:1.7;padding:0 10px}.demoFoot b{display:block;color:#27533b}
+@media (max-width:500px){.wrap{padding:0;gap:0}.intro{display:none}.phone{width:100%;height:100dvh;min-height:0;border:none;border-radius:0;box-shadow:none}.status{height:calc(env(safe-area-inset-top) + 25px);padding-top:env(safe-area-inset-top)}.stage{height:calc(100% - env(safe-area-inset-top) - 91px)}.bottom{padding-bottom:max(6px,env(safe-area-inset-bottom));height:calc(66px + env(safe-area-inset-bottom))}.stage{height:calc(100% - env(safe-area-inset-top) - 91px - env(safe-area-inset-bottom))}.overlay{top:calc(env(safe-area-inset-top) + 25px)}.demoFoot{display:none}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="intro"><span class="key">معاينة تفاعلية آمنة — ليست التطبيق المنشور</span><h1>وقار ✦ انتقالات الصلاة والقبلة</h1><p>جرّب الضغط على أي صلاة، ثم اختصار القبلة من الرئيسية</p></div>
+<div class="phone" id="waqarPhone">
+<div class="status"><span>9:41</span><span class="notch"></span><span>◉ ▰ ▰</span></div>
+<div class="stage">
+<section class="view active" id="view-home" aria-label="الرئيسية">
+<div class="hero">
+<svg class="mosque" viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice"><path d="M0 112H400V120H0zM105 112V78h188v34zM129 78C129 19 267 19 267 78zM194 37h9v-9h-9zM45 112V39h21v73zM40 41h31v5H40zM44 39Q56 7 68 39zM51 23h9v18h-9zM338 112V33h22v79zM333 35h32v5h-32zM337 32q12-29 26 0zM345 11h8v25h-8z"/></svg>
+<div class="heroTop"><button type="button" class="round" data-sheet="القائمة" aria-label="فتح القائمة">☰</button><b>وقار</b><button type="button" class="round" data-go="qibla" aria-label="القبلة مباشرة">⌖</button></div>
+<div class="heroCity">◉ الزلفي<small>تصور واجهة · أوقات توضيحية لا تمثل مواقيت اليوم</small></div>
+</div>
+<div class="homeBody">
+<button class="heroCard" type="button" data-prayer="3">
+<span class="label">الصلاة القادمة في المثال</span><strong id="currentPrayer">العصر</strong><span class="count" id="homeCountdown">00:35:00</span><span class="caption">اضغط لعرض الصلاة التي بعدها والوقت المتبقي</span><span class="orb">🔔</span>
+</button>
+<div class="stripLabel">مواقيت الصلاة · اضغط أي صلاة لمعرفة التي بعدها</div>
+<div class="prayerStrip" id="homePrayerStrip">
+<button type="button" data-prayer="0"><i>☾</i><b>الفجر</b><small>٤:٥٠ ص</small></button>
+<button type="button" data-prayer="1"><i>☀</i><b>الشروق</b><small>٦:٠٩ ص</small></button>
+<button type="button" data-prayer="2"><i>☀</i><b>الظهر</b><small>١١:٤٥ ص</small></button>
+<button type="button" class="highlight" data-prayer="3"><i>☀</i><b>العصر</b><small>٣:٠٥ م</small></button>
+<button type="button" data-prayer="4"><i>◐</i><b>المغرب</b><small>٥:١٩ م</small></button>
+<button type="button" data-prayer="5"><i>☾</i><b>العشاء</b><small>٦:٤٩ م</small></button>
+</div>
+<div class="shortcutGrid">
+<button class="shortcut" type="button" data-go="quran"><i>▣</i><span>القرآن</span></button>
+<button class="shortcut" type="button" data-go="adhkar"><i>✦</i><span>الأذكار</span></button>
+<button class="shortcut" type="button" data-go="times"><i>◷</i><span>الصلاة</span></button>
+<button class="shortcut" type="button" data-go="qibla"><i>⌖</i><span>القبلة</span></button>
+</div>
+<button class="qiblaFast" type="button" data-go="qibla"><span class="qicon">⌖</span><span style="position:relative;z-index:1"><b>اتجاه القبلة</b><small>فتح سريع للبوصلة بضغطة واحدة ←</small></span></button>
+<button type="button" class="card" data-go="quran"><span class="cardIcon">▣</span><span><b>متابعة القراءة</b><small>ابدأ من سورة الفاتحة</small></span><span class="chevron">‹</span></button>
+<button type="button" class="card" data-go="adhkar"><span class="cardIcon">✦</span><span><b>أذكار الصباح</b><small>بطاقة قراءة واحدة بحركة سحب</small></span><span class="chevron">‹</span></button>
+</div>
+</section>
+<section class="view" id="view-times" aria-label="مواقيت الصلاة">
+<div class="pageHead"><div class="line"><h2>مواقيت الصلاة</h2><button class="pageBack" data-go="home">رجوع ←</button></div><small>اختَر صلاة لتعرف ما يليها وكم بقي من الوقت</small></div>
+<div class="section"><div class="softCard"><h3>الزلفي · مثال تجريبي</h3><p>يُحسب العد التنازلي هنا حسب الساعة التجريبية ٢:٣٠ م، وليس بحسب مواقيت اليوم الفعلية.</p></div><div class="timeList" id="prayerList"></div></div>
+</section>
+<section class="view" id="view-qibla" aria-label="القبلة">
+<div class="pageHead"><div class="line"><h2>القبلة</h2><button class="pageBack" data-go="home">الرئيسية ←</button></div><small>انتقال متصل من اختصار القبلة في الشاشة الرئيسية</small></div>
+<div class="section"><div class="compass" aria-label="بوصلة تمثيلية"><span class="needle" id="needle"></span><span class="symbol">⌖</span></div><div class="softCard" style="text-align:center"><h3>اتجاه القبلة</h3><p>هذه حركة بوصلة للمعاينة فقط، وليست اتجاهًا حقيقيًا. التطبيق الفعلي يستخدم الموقع والمستشعرات لتحديد القبلة.</p></div><button type="button" class="primary wide" id="rotateBtn">جرّب حركة البوصلة ↻</button><button type="button" class="secondary wide" style="margin-top:9px" data-go="home">العودة إلى الرئيسية</button></div>
+</section>
+<section class="view" id="view-quran" aria-label="القرآن">
+<div class="pageHead"><div class="line"><h2>القرآن الكريم</h2><button class="pageBack" data-go="home">رجوع ←</button></div><small>فتح المصحف بحركة انزلاق وتلاشي</small></div>
+<div class="section"><div class="verses" id="mushaf"><span id="quranText">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَٰنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ</span></div><div class="split"><button class="primary" id="flipBtn">تقليب الصفحة ←</button><button class="secondary" data-sheet="حفظ موضع القراءة">حفظ الموضع</button></div></div>
+</section>
+<section class="view" id="view-adhkar" aria-label="الأذكار">
+<div class="pageHead"><div class="line"><h2>الأذكار</h2><button class="pageBack" data-go="home">رجوع ←</button></div><small>بطاقة قراءة واحدة؛ النصوص الرسمية بعد الاعتماد</small></div>
+<div class="section"><div class="softCard"><h3 id="dhikrProgressTitle">وردك التجريبي · ٠ من ٣</h3><div class="progress"><span id="dhikrProgress"></span></div></div><div class="dhikrCard" id="dhikrCard"><span class="flourish">✧</span><span id="dhikrHeading">بطاقة ١ من ٣</span><strong>وقت هادئ لذكر الله</strong><small>نص وصفي تجريبي فقط. لا نعرض ذكرًا غير معتمد في التطبيق.</small></div><div class="split"><button type="button" class="secondary" id="dhikrNext">التالي ←</button><button type="button" class="primary" id="dhikrComplete">✓ أنجزت الذكر</button></div></div>
+</section>
+<section class="view" id="view-more" aria-label="المزيد">
+<div class="pageHead"><div class="line"><h2>المزيد</h2><button class="pageBack" data-go="home">رجوع ←</button></div><small>جميع عناصر القائمة تفتح بحركة انتقال</small></div>
+<div class="section"><button class="card" data-go="qibla"><span class="cardIcon">⌖</span><b>القبلة</b><span class="chevron">‹</span></button><button class="card" data-go="times"><span class="cardIcon">◷</span><b>مواقيت الصلاة</b><span class="chevron">‹</span></button><button class="card" data-sheet="الإعدادات"><span class="cardIcon">⚙</span><b>الإعدادات</b><span class="chevron">‹</span></button><button class="card" data-sheet="التقويم الهجري"><span class="cardIcon">▦</span><b>التقويم الهجري</b><span class="chevron">‹</span></button></div>
+</section>
+</div>
+<nav class="bottom" id="bottom">
+<button type="button" class="active" data-go="home"><i>⌂</i><small>الرئيسية</small></button>
+<button type="button" data-go="quran"><i>▣</i><small>القرآن</small></button>
+<button type="button" data-go="adhkar"><i>✦</i><small>الأذكار</small></button>
+<button type="button" data-go="times"><i>◷</i><small>الصلاة</small></button>
+<button type="button" data-go="more"><i>▦</i><small>المزيد</small></button>
+</nav>
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="تفاصيل الصلاة"><div class="sheet" id="sheet"><div class="handle"></div><div class="sheetHead" id="sheetHeading"></div><h3 id="sheetTitle"></h3><div id="sheetDetails"></div><div class="actions"><button class="secondary" id="closeSheet" type="button">إغلاق</button><button class="primary" id="sheetAction" type="button">مواقيت الصلاة</button></div></div></div>
+</div>
+<div class="demoFoot"><b>هذه معاينة تصميمية عامة وليست تطبيق وقار المثبّت.</b>كل المواقيت والعدّادات تجريبية. لا تستعملها لمعرفة وقت الصلاة أو اتجاه القبلة الحقيقي.</div>
+</div>
+<script>
+(function(){
+"use strict";
+var root=document.getElementById("waqarPhone"),overlay=document.getElementById("overlay");
+var stage=document.querySelector(".stage"),view="home",locked=false,selectedPrayer=3,nowSeconds=14*3600+30*60;
+var prayers=[
+ {name:"الفجر",at:4*60+50,label:"٤:٥٠ ص",icon:"☾"},
+ {name:"الشروق",at:6*60+9,label:"٦:٠٩ ص",icon:"☀"},
+ {name:"الظهر",at:11*60+45,label:"١١:٤٥ ص",icon:"☀"},
+ {name:"العصر",at:15*60+5,label:"٣:٠٥ م",icon:"☀"},
+ {name:"المغرب",at:17*60+19,label:"٥:١٩ م",icon:"◐"},
+ {name:"العشاء",at:18*60+49,label:"٦:٤٩ م",icon:"☾"}
+];
+var after=[2,2,3,4,5,0],dhikrIndex=0,dhikrCompleted=[false,false,false],pageNumber=0,rotation=0;
+function two(n){return String(n).padStart(2,"0")}
+function duration(sec){sec=Math.max(0,Math.floor(sec));return two(Math.floor(sec/3600))+":"+two(Math.floor((sec%3600)/60))+":"+two(sec%60)}
+function until(at){var t=at*60;var time=nowSeconds%(24*3600);if(t<=time)t+=24*3600;return {seconds:t-time,tomorrow:t>=86400}}
+function updateClock(){var chosen=prayers[3];var upcoming=prayers.filter(function(p){return p.name!=="الشروق"&&p.at*60>nowSeconds%(86400)})[0]||prayers[0];document.getElementById("currentPrayer").textContent=upcoming.name;document.getElementById("homeCountdown").textContent=duration(until(upcoming.at).seconds);var cd=document.getElementById("sheetCountdown");if(cd&&overlay.classList.contains("open")){cd.textContent=duration(until(prayers[after[selectedPrayer]].at).seconds)}}
+function setView(name){if(name===view||locked)return;var old=document.getElementById("view-"+view),next=document.getElementById("view-"+name);if(!next)return;closeOverlay();locked=true;old.classList.add("leaving");setTimeout(function(){old.classList.remove("active","leaving");next.classList.add("active");next.scrollTop=0;view=name;locked=false;document.querySelectorAll("#bottom button").forEach(function(b){b.classList.toggle("active",b.dataset.go===name)})},170)}
+function openOverlay(){overlay.classList.add("open")}
+function closeOverlay(){overlay.classList.remove("open");document.getElementById("sheetCountdown").removeAttribute("id")}
+function setupSheet(heading,title,content,buttonText,buttonPage){document.getElementById("sheetHeading").textContent=heading;document.getElementById("sheetTitle").textContent=title;document.getElementById("sheetDetails").innerHTML=content;var action=document.getElementById("sheetAction");action.textContent=buttonText||"الرئيسية";action.dataset.go=buttonPage||"home";openOverlay()}
+function openPrayer(i){selectedPrayer=i;var current=prayers[i],next=prayers[after[i]],wait=until(next.at);var intro=i===1?"الشروق ليس صلاة مفروضة؛ الصلاة المفروضة التالية هي الظهر.":"بعد صلاة "+current.name+" تأتي صلاة "+next.name+".";var html='<p style="text-align:center;font-size:12px;color:#708574;margin:9px 0">'+intro+'</p><div class="nextBox"><span class="nextLabel">الصلاة التي بعدها</span><strong>'+next.name+'</strong><span style="font-size:12px;color:#54745a">موعدها '+next.label+(wait.tomorrow?" · غدًا":" · اليوم")+'</span><div id="sheetCountdown" class="countDown">'+duration(wait.seconds)+'</div><span style="font-size:11px;color:#54745a">الوقت المتبقي حسب الساعة التجريبية</span></div><p class="foot">ضغطت على '+current.name+' ('+current.label+'). الوقت التجريبي الآن ٢:٣٠ م، وليس موعدًا فعليًا للزلفي.</p>';
+setupSheet("تفاصيل الصلاة المحددة",current.name,html,"كل المواقيت","times");document.querySelectorAll("#homePrayerStrip button").forEach(function(b){b.classList.toggle("highlight",Number(b.dataset.prayer)===i)})}
+function genericSheet(name){setupSheet("معاينة انتقال اللوحة",name,'<div class="nextBox"><strong style="font-size:23px">✧</strong><p class="foot">الواجهة الخاصة بـ '+name+' تظهر بحركة صعود ناعمة، ويمكن إغلاقها أو الانتقال للأقسام.</p></div>',"الرئيسية","home")}
+function fillTimes(){var list=document.getElementById("prayerList");prayers.forEach(function(p,i){var b=document.createElement("button");b.type="button";b.dataset.prayer=String(i);b.innerHTML="<span>"+p.icon+"　"+p.name+"</span><small>"+p.label+"　‹ اعرض الصلاة التالية</small>";list.appendChild(b)})}
+function paintDhikr(){document.getElementById("dhikrHeading").textContent="بطاقة "+(dhikrIndex+1)+" من ٣";document.getElementById("dhikrProgressTitle").textContent="ورد تجريبي · "+dhikrCompleted.filter(Boolean).length+" من ٣";document.getElementById("dhikrProgress").style.width=(dhikrCompleted.filter(Boolean).length/3*100)+"%";document.getElementById("dhikrComplete").textContent=dhikrCompleted[dhikrIndex]?"✓ تم الإنجاز":"✓ أنجزت الذكر";var card=document.getElementById("dhikrCard");card.style.animation="none";void card.offsetWidth;card.style.animation=""}
+function handleClick(event){var b=event.target.closest("button");if(!b)return;if(b.dataset.prayer!==undefined){openPrayer(Number(b.dataset.prayer));return}if(b.dataset.sheet){genericSheet(b.dataset.sheet);return}if(b.dataset.go){setView(b.dataset.go);return}}
+root.addEventListener("click",handleClick);
+overlay.addEventListener("click",function(e){if(e.target===overlay)closeOverlay()});
+document.getElementById("closeSheet").addEventListener("click",closeOverlay);
+document.getElementById("rotateBtn").addEventListener("click",function(){rotation+=135;document.getElementById("needle").style.setProperty("--spin",rotation+"deg")});
+document.getElementById("dhikrNext").addEventListener("click",function(){dhikrIndex=(dhikrIndex+1)%3;paintDhikr()});
+document.getElementById("dhikrComplete").addEventListener("click",function(){dhikrCompleted[dhikrIndex]=!dhikrCompleted[dhikrIndex];paintDhikr()});
+document.getElementById("flipBtn").addEventListener("click",function(){var el=document.getElementById("mushaf");el.classList.remove("flip");void el.offsetWidth;el.classList.add("flip");setTimeout(function(){pageNumber=(pageNumber+1)%2;document.getElementById("quranText").textContent=pageNumber?"الم ۝ ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ هُدًى لِلْمُتَّقِينَ":"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَٰنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ";},220)});
+fillTimes();updateClock();setInterval(function(){nowSeconds=(nowSeconds+1)%(24*3600);updateClock()},1000);
+})();
+</script>
+</body></html>
